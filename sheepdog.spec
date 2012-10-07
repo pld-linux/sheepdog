@@ -1,6 +1,8 @@
 # TODO:
-# - more clusters support: zookeeper [-lzookeeper_mt, zookeeper.h], accord [libacrd.pc]
-# - PLDify init script
+# - more clusters support:
+#   - zookeeper (http://zookeeper.apache.org/) [-lzookeeper_mt, zookeeper.h]
+#   - accord (http://www.osrg.net/accord/ - available on github, no releases yet) [libacrd.pc]
+# - PLDify and register init script
 Summary:	Sheepdog - distributed storage system for QEMU/KVM
 Summary(pl.UTF-8):	Sheepdog - rozproszony system przechowywania danych dla QEMU/KVM
 Name:		sheepdog
