@@ -7,7 +7,7 @@ Summary:	Sheepdog - distributed storage system for QEMU/KVM
 Summary(pl.UTF-8):	Sheepdog - rozproszony system przechowywania danych dla QEMU/KVM
 Name:		sheepdog
 Version:	0.5.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	https://github.com/collie/sheepdog/tarball/v%{version}/%{name}-%{version}.tar.gz
