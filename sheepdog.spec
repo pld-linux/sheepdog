@@ -55,6 +55,7 @@ bash-completion for sheepdog
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	--with-initddir=/etc/rc.d/init.d
 %{__make}
 
