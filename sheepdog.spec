@@ -38,13 +38,17 @@ możliwości zarządzania wolumentami, takie jak migawka (snapshot),
 klonowanie i nadalokacja (thin provisioning).
 
 %package -n bash-completion-%{name}
-Summary:        bash-completion for sheepdog
+Summary:        bash-completion for dog command
+Summary(pl.UTF-8):	Bashowe dopełnianie składni dla polecenia dog
 Group:          Applications/Shells
 Requires:       %{name} = %{version}-%{release}
 Requires:       bash-completion
 
 %description -n bash-completion-%{name}
-bash-completion for sheepdog
+bash-completion for sheepdog dog command.
+
+%description -n bash-completion-%{name} -l pl.UTF-8
+Bashowe dopełnianie składni dla polecenia dog z pakietu sheepdog.
 
 %prep
 %setup -q -n sheepdog-sheepdog-f06a150
