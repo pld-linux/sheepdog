@@ -12,6 +12,7 @@ License:	GPL v2
 Group:		Applications/System
 Source0:	https://github.com/collie/sheepdog/tarball/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	47f2381734a2e3f9ed4b10ef38254ba9
+Patch0:		ix86-cpus.patch
 URL:		http://www.osrg.net/sheepdog/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake
@@ -56,6 +57,7 @@ Bashowe dopełnianie składni dla polecenia dog z pakietu sheepdog.
 
 %prep
 %setup -q -n sheepdog-sheepdog-c648986
+%patch0 -p1
 
 %build
 %{__aclocal}

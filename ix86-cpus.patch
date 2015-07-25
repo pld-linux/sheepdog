@@ -1,0 +1,15 @@
+--- sheepdog-sheepdog-c648986/include/compiler.h~	2014-10-31 07:32:03.000000000 +0100
++++ sheepdog-sheepdog-c648986/include/compiler.h	2015-07-25 13:14:37.507366860 +0200
+@@ -164,6 +164,12 @@
+ #define cpu_has_avx		cpu_has(X86_FEATURE_AVX)
+ #define cpu_has_osxsave		cpu_has(X86_FEATURE_OSXSAVE)
+ 
++#else
++
++#define cpu_has_ssse3           0
++#define cpu_has_avx		0
++#define cpu_has_osxsave		0
++
+ #endif /* __x86_64__ */
+ 
+ #endif	/* SD_COMPILER_H */
