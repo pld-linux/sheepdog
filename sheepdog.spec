@@ -10,8 +10,8 @@ Version:	0.9.2
 Release:	1
 License:	GPL v2
 Group:		Applications/System
-Source0:	https://github.com/collie/sheepdog/tarball/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	f00856d60425202cb9d3c1c834d7d9ec
+Source0:	https://github.com/collie/sheepdog/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	b02eadf70b9cea6e05b5887d193941bf
 Patch0:		32bits-targets.patch
 URL:		http://www.osrg.net/sheepdog/
 BuildRequires:	autoconf >= 2.61
@@ -56,7 +56,7 @@ bash-completion for sheepdog dog command.
 Bashowe dopełnianie składni dla polecenia dog z pakietu sheepdog.
 
 %prep
-%setup -q -n sheepdog-sheepdog-c648986
+%setup -q
 %patch0 -p1
 
 %build

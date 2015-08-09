@@ -52,8 +52,8 @@ index dec81c7..dfb2fb0 100644
  			  sha1.c option.c work.c sockfd_cache.c fec.c \
  			  sd_inode.c common.c
  
--libsd_a_LIBADD		= isa-l/bin/ec_base.o \
-+libsd_a_LIBADD_		= isa-l/bin/ec_base.o \
+-libsheepdog_a_LIBADD	= isa-l/bin/ec_base.o \
++libsheepdog_a_LIBADD_	= isa-l/bin/ec_base.o \
  			  isa-l/bin/ec_highlevel_func.o \
  			  isa-l/bin/ec_multibinary.o \
  			  isa-l/bin/gf_2vect_dot_prod_sse.o \
@@ -61,7 +61,7 @@ index dec81c7..dfb2fb0 100644
  			  isa-l/bin/gf_vect_mul_avx.o \
  			  isa-l/bin/gf_vect_mul_sse.o
  
-+libsd_a_LIBADD_32	= isa-l/bin/ec_base.o \
++libsheepdog_a_LIBADD_32	= isa-l/bin/ec_base.o \
 +			  isa-l/bin/ec_highlevel_func.o \
 +			  isa-l/bin/ec_multibinary.o
 +
@@ -69,7 +69,7 @@ index dec81c7..dfb2fb0 100644
 +arch = 32
 +endif
 +
-+libsd_a_LIBADD		= $(libsd_a_LIBADD_$(arch))
++libsheepddog_a_LIBADD		= $(libsheepdog_a_LIBADD_$(arch))
 +
  if BUILD_SHA1_HW
  libsd_a_SOURCES		+= sha1_ssse3.S
