@@ -69,7 +69,7 @@ index dec81c7..dfb2fb0 100644
 +arch = 32
 +endif
 +
-+libsheepddog_a_LIBADD		= $(libsheepdog_a_LIBADD_$(arch))
++libsheepdog_a_LIBADD		= $(libsheepdog_a_LIBADD_$(arch))
 +
  if BUILD_SHA1_HW
  libsd_a_SOURCES		+= sha1_ssse3.S
