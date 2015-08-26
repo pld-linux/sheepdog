@@ -2,6 +2,8 @@
 # - more clusters support:
 #   - zookeeper (http://zookeeper.apache.org/) [-lzookeeper_mt, zookeeper.h]
 #   - accord (http://www.osrg.net/accord/ - available on github, no releases yet) [libacrd.pc]
+# - http request service (--enable-http)?
+# - nfs server service (--enable-nfs)?
 # - PLDify and register init script
 Summary:	Sheepdog - distributed storage system for QEMU/KVM
 Summary(pl.UTF-8):	Sheepdog - rozproszony system przechowywania danych dla QEMU/KVM
@@ -18,9 +20,11 @@ BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake
 BuildRequires:	corosync-devel
 BuildRequires:	groff
-BuildRequires:	libfuse-devel
+BuildRequires:	libfuse-devel >= 2.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	userspace-rcu-devel >= 0.6.0
+Requires:	libfuse >= 2.8.0
+Requires:	userspace-rcu >= 0.6.0
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -66,7 +70,8 @@ Bashowe dopełnianie składni dla polecenia dog z pakietu sheepdog.
 %{__automake}
 %configure \
 	--disable-silent-rules \
-	--with-initddir=/etc/rc.d/init.d
+	--with-initddir=/etc/rc.d/init.d \
+	--with-systemdsystemunitdir=%{systemdunitdir}
 %{__make}
 
 %install
@@ -87,6 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/shepherd
 %dir /var/lib/sheepdog
 %attr(754,root,root) /etc/rc.d/init.d/sheepdog
+%{systemdunitdir}/sheepdog.service
 %{_mandir}/man8/dog.8*
 %{_mandir}/man8/sheep.8*
 %{_mandir}/man8/sheepfs.8*
