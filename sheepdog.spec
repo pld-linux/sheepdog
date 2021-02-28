@@ -49,9 +49,7 @@ Summary(pl.UTF-8):	Bashowe dopełnianie składni dla polecenia dog
 Group:          Applications/Shells
 Requires:       %{name} = %{version}-%{release}
 Requires:       bash-completion
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n bash-completion-%{name}
 bash-completion for sheepdog dog command.
