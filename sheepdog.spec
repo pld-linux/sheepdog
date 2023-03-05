@@ -19,6 +19,7 @@ Group:		Applications/System
 #Source0Download: https://github.com/sheepdog/sheepdog/tags
 Source0:	https://github.com/collie/sheepdog/archive/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	0f7f865ceefc07a88dfec5c2f1912e32
+Patch0:		%{name}-no-common.patch
 URL:		http://www.osrg.net/sheepdog/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake
@@ -28,6 +29,7 @@ BuildRequires:	libfuse-devel >= 2.8.0
 BuildRequires:	libqb-devel
 BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	systemd-devel >= 1:209
 BuildRequires:	userspace-rcu-devel >= 0.6.0
 %ifarch %{x8664}
@@ -104,6 +106,7 @@ Biblioteka statyczna sheepdog.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
