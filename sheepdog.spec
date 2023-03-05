@@ -37,7 +37,6 @@ BuildRequires:	yasm >= 1.2.0
 %endif
 Requires:	libfuse >= 2.8.0
 Requires:	userspace-rcu >= 0.6.0
-ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -107,6 +106,13 @@ Biblioteka statyczna sheepdog.
 %prep
 %setup -q
 %patch0 -p1
+
+%ifarch x32
+# currently not supported in lib/isa-l, but let's check
+%{__sed} -i -e 's/-f elf64/-f elfx32/' \
+	configure.ac \
+	lib/isa-l/make.inc
+%endif
 
 %build
 %{__libtoolize}
