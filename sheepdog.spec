@@ -105,7 +105,7 @@ Biblioteka statyczna sheepdog.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %ifarch x32
 # currently not supported in lib/isa-l, but let's check
